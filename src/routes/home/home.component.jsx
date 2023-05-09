@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import CategoryMenu from '../../components/category-menu/category-menu.component';
+import Hero from '../../components/hero/hero.component';
 
 const Home = () => {
   const categories = [
@@ -25,7 +26,8 @@ const Home = () => {
     },
   ];
   return (
-    <div>
+    <div className='home'>
+      <Hero />
       <CategoryMenu categories={categories} />
       <Outlet />
     </div>

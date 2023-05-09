@@ -91,12 +91,10 @@
   grid-gap: 32px;
   position: relative;
   z-index: 1;
-  border: 1px solid blue;
 }
 
 .card {
   margin: 10px;
-  border: 1px solid yellow;
   background-color: var(--background-color);
   box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
       var(--card-box-shadow-1),
@@ -580,7 +578,6 @@ body {
 }
 
 .category-item-link {
-  border: 1px solid lightgrey;
   text-decoration: none;
   color: white;
   font-size: 12px;

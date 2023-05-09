@@ -1,0 +1,23 @@
+.hero-container {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+
+.hero-text {
+  flex-basis: 50%;
+  margin-top: 100px;
+  position: absolute;
+}
+
+.hero-image {
+  width: 50%;
+  text-align: right;
+}
+
+.image {
+  max-width: 50%;
+  height: auto;
+  opacity: 50%;
+}

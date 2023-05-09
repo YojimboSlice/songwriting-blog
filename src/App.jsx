@@ -8,32 +8,34 @@ import Hardware from './routes/hardware/hardware.component';
 import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <Routes>
-      <Route
-        path='/'
-        element={<Navigation />}>
+    <div className='App'>
+      <Routes>
         <Route
-          index
-          element={<Home />}
-        />
-        <Route
-          path='songwriting'
-          element={<Songwriting />}
-        />
-        <Route
-          path='musicproduction'
-          element={<MusicProduction />}
-        />
-        <Route
-          path='inspirations'
-          element={<Inspirations />}
-        />
-        <Route
-          path='hardware'
-          element={<Hardware />}
-        />
-      </Route>
-    </Routes>
+          path='/'
+          element={<Navigation />}>
+          <Route
+            index
+            element={<Home />}
+          />
+          <Route
+            path='songwriting'
+            element={<Songwriting />}
+          />
+          <Route
+            path='musicproduction'
+            element={<MusicProduction />}
+          />
+          <Route
+            path='inspirations'
+            element={<Inspirations />}
+          />
+          <Route
+            path='hardware'
+            element={<Hardware />}
+          />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
