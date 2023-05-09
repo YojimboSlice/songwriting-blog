@@ -1,8 +1,8 @@
 .hero-container {
-  max-width: 500px;
+  max-width: 100px;
   margin: auto;
   display: flex;
-  position: relative;
+  border: 1px solid red;
 }
 
 .hero-text {
@@ -12,12 +12,12 @@
 }
 
 .hero-image {
-  width: 50%;
+  width: 10%;
   text-align: right;
 }
 
 .image {
-  max-width: 50%;
+  max-width: 10%;
   height: auto;
   opacity: 50%;
 }
