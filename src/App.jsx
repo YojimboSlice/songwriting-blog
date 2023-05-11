@@ -7,15 +7,19 @@ import MusicProduction from './routes/musicproduction/musicproduction.component'
 import Inspirations from './routes/inspirations/inspirations.component';
 import Hardware from './routes/hardware/hardware.component';
 import { Routes, Route } from 'react-router-dom';
-import getData from '../netlify/functions/get-data';
 
 function App() {
   const [backendData, setBackendData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData();
-      setBackendData(data);
+      try {
+        const response = await fetch('/.netlify/functions/get-data');
+        const data = await response.json();
+        setBackendData(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, []);
