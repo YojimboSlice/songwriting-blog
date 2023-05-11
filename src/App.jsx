@@ -15,8 +15,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const uri =
-          'mongodb+srv://jamesryanlan:<password>@cluster0.ihtbcbe.mongodb.net/?retryWrites=true&w=majority'; // Replace with your MongoDB URI
+        const uri = import.meta.env.MONGO_URI; // Replace with your MongoDB URI
         const client = new MongoClient(uri, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
