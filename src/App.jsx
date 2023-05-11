@@ -7,16 +7,28 @@ import MusicProduction from './routes/musicproduction/musicproduction.component'
 import Inspirations from './routes/inspirations/inspirations.component';
 import Hardware from './routes/hardware/hardware.component';
 import { Routes, Route } from 'react-router-dom';
+import { MongoClient } from 'mongodb';
+
 function App() {
   const [backendData, setBackendData] = useState([{}]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api');
-        const data = await response.json();
+        const uri =
+          'mongodb+srv://jamesryanlan:<password>@cluster0.ihtbcbe.mongodb.net/?retryWrites=true&w=majority'; // Replace with your MongoDB URI
+        const client = new MongoClient(uri, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        });
+        await client.connect();
+        const collection = client
+          .db('songwriting_blog')
+          .collection('songwriting_blog_posts'); // Replace with your collection name
+        const data = await collection.find().toArray();
         console.log(data); // Add this line to check the data
         setBackendData(data);
+        await client.close();
       } catch (error) {
         console.log(error);
       }
