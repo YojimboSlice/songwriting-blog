@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 import { MongoClient } from 'mongodb';
 
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  const [backendData, setBackendData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +24,8 @@ function App() {
         const collection = client
           .db('songwriting_blog')
           .collection('songwriting_blog_posts'); // Replace with your collection name
-        const data = await collection.find().toArray();
+        const cursor = collection.find();
+        const data = await cursor.toArray();
         console.log(data); // Add this line to check the data
         setBackendData(data);
         await client.close();

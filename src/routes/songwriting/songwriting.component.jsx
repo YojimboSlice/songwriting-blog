@@ -4,7 +4,7 @@ import './songwriting.styles.scss';
 const Songwriting = ({ backendData }) => {
   return (
     <div className='songwriting-container'>
-      {backendData.posts.map(post => (
+      {backendData.map(post => (
         <PostCard
           key={post.id}
           post={post}
