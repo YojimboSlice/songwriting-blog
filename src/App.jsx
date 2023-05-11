@@ -7,7 +7,7 @@ import MusicProduction from './routes/musicproduction/musicproduction.component'
 import Inspirations from './routes/inspirations/inspirations.component';
 import Hardware from './routes/hardware/hardware.component';
 import { Routes, Route } from 'react-router-dom';
-import getData from './functions/get-data';
+import getData from '../netlify/functions/get-data';
 
 function App() {
   const [backendData, setBackendData] = useState([]);
