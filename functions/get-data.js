@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 exports.handler = async (event, context) => {
   try {
-    const uri = import.meta.env.MONGO_URI; // Replace with your MongoDB URI
+    const uri = process.env.MONGO_URI; // Replace with your MongoDB URI
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
